@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Gudd Ji</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .custom-notification {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: none;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="notification" class="custom-notification"></div>
+    <header>
+        <div class="header-top">
+            <div class="logo-section">
+                <img src="images/brandlogo.png" alt="Gudd Ji Logo">
+                <div class="brand-text">
+                    <h1>Welcome to Gudd Ji</h1>
+                    <p>Pure and Organic Jaggery Products</p>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="products-header">
+        <h1>Our Products</h1>
+        <p>Discover our range of pure and organic jaggery products</p>
+    </div>
+
+    <div class="products-filter">
+        <div class="filter-group">
+            <label for="category">Category:</label>
+            <select id="category" onchange="filterProducts()">
+                <option value="all">All Products</option>
+                <option value="block">Jaggery Blocks</option>
+                <option value="powder">Jaggery Powder</option>
+                <option value="candy">Jaggery Candy</option>
+                <option value="flavored">Flavored Jaggery</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="sort">Sort by:</label>
+            <select id="sort" onchange="filterProducts()">
+                <option value="default">Default</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="name">Name: A to Z</option>
+            </select>
+        </div>
+    </div>
+
+    <section id="products" class="products">
+        <div class="product" data-category="block">
+            <img src="images/product1.jpg" alt="Jaggery Product 1">
+            <h2>Organic Jaggery Block</h2>
+            <p>500g - Rs. 300</p>
+            <button onclick="addToCart({
+                name: 'Organic Jaggery Block',
+                price: 300,
+                image: 'images/product1.jpg',
+                quantity: 1
+            })">Add to Cart</button>
+        </div>
+        <div class="product" data-category="powder">
+            <img src="images/product2.png" alt="Jaggery Product 2">
+            <h2>Jaggery Powder</h2>
+            <p>1kg - Rs. 500</p>
+            <button onclick="addToCart({
+                name: 'Jaggery Powder',
+                price: 500,
+                image: 'images/product2.jpg',
+                quantity: 1
+            })">Add to Cart</button>
+        </div>
+        <div class="product" data-category="candy">
+            <img src="images/product3.jpg" alt="Jaggery Product 3">
+            <h2>Flavored Jaggery candy</h2>
+            <p>250g - Rs. 199</p>
+            <button onclick="addToCart({
+                name: 'Flavored Jaggery candy',
+                price: 199,
+                image: 'images/product3.jpg',
+                quantity: 1
+            })">Add to Cart</button>
+        </div>
+        <div class="product" data-category="flavored">
+            <img src="images/product4.png" alt="Jaggery Product 4">
+            <h2>Flavored Jaggery</h2>
+            <p>250g - Rs. 199</p>
+            <button onclick="addToCart({
+                name: 'Flavored Jaggery',
+                price: 199,
+                image: 'images/product4.png',
+                quantity: 1
+            })">Add to Cart</button>
+        </div>
+        <div class="product" data-category="flavored">
+            <img src="images/product5.png" alt="Jaggery Product 5">
+            <h2>Flavored Jaggery</h2>
+            <p>250g - Rs. 199</p>
+            <button onclick="addToCart({
+                name: 'Flavored Jaggery',
+                price: 199,
+                image: 'images/product5.png',
+                quantity: 1
+            })">Add to Cart</button>
+        </div>
+        <div class="product" data-category="block">
+            <img src="images/product1.jpg" alt="Jaggery Product 6">
+            <h2>Premium Jaggery Block</h2>
+            <p>1kg - Rs. 550</p>
+            <button onclick="addToCart({
+                name: 'Premium Jaggery Block',
+                price: 550,
+                image: 'images/product1.jpg',
+                quantity: 1
+            })">Add to Cart</button>
+        </div>
+        <div class="product" data-category="powder">
+            <img src="images/product2.png" alt="Jaggery Product 7">
+            <h2>Organic Jaggery Powder</h2>
+            <p>500g - Rs. 250</p>
+            <button onclick="addToCart({
+                name: 'Organic Jaggery Powder',
+                price: 250,
+                image: 'images/product2.jpg',
+                quantity: 1
+            })">Add to Cart</button>
+        </div>
+        <div class="product" data-category="candy">
+            <img src="images/product3.jpg" alt="Jaggery Product 8">
+            <h2>Mixed Jaggery Candy</h2>
+            <p>500g - Rs. 350</p>
+            <button onclick="addToCart({
+                name: 'Mixed Jaggery Candy',
+                price: 350,
+                image: 'images/product3.jpg',
+                quantity: 1
+            })">Add to Cart</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Gudd Ji is your trusted source for pure and organic jaggery products.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Gudd Ji. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Cart functionality
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.style.display = 'block';
+            
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+
+        function updateCartCount() {
+            const cartCount = document.getElementById('cartCount');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+        }
+
+        function addToCart(product) {
+            const existingItem = cart.find(item => item.name === product.name);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push(product);
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            
+            // Show custom notification instead of alert
+            showNotification(`${product.name} added to cart!`);
+        }
+
+        // Product filtering functionality
+        function filterProducts() {
+            const category = document.getElementById('category').value;
+            const sortBy = document.getElementById('sort').value;
+            const productsContainer = document.getElementById('products');
+            const products = Array.from(productsContainer.children);
+            
+            // Filter by category
+            let filteredProducts = products;
+            if (category !== 'all') {
+                filteredProducts = products.filter(product => product.dataset.category === category);
+            }
+            
+            // Sort products
+            filteredProducts.sort((a, b) => {
+                const priceA = parseInt(a.querySelector('p').textContent.split('Rs.')[1]);
+                const priceB = parseInt(b.querySelector('p').textContent.split('Rs.')[1]);
+                const nameA = a.querySelector('h2').textContent;
+                const nameB = b.querySelector('h2').textContent;
+                
+                if (sortBy === 'price-low') {
+                    return priceA - priceB;
+                } else if (sortBy === 'price-high') {
+                    return priceB - priceA;
+                } else if (sortBy === 'name') {
+                    return nameA.localeCompare(nameB);
+                }
+                return 0;
+            });
+            
+            // Clear and re-append filtered products
+            productsContainer.innerHTML = '';
+            filteredProducts.forEach(product => {
+                productsContainer.appendChild(product);
+            });
+        }
+
+        // Initialize cart count on page load
+        updateCartCount();
+    </script>
+</body>
+</html> 
