@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title -->
+    <title>Gudd Ji - Pure Jaggery</title>
+     
+    <link rel="stylesheet" href="styles.css">
+    <!-- External stylesheets and scripts-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+       
+
+
+        footer {
+            background-color:black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section with logo and navigation -->
+    <header>
+        <div class="header-top">
+            <div class="logo-section">
+                <img src="images/brandlogo.png" alt="Gudd Ji Logo">
+                <style>
+                    .logo-section img {
+                        margin-right: 200px;
+                    }
+                </style>
+                <div class="brand-text">
+                    <h1>Welcome to Gudd Ji</h1>
+                    <p>Pure and Organic Jaggery Products</p>
+                </div>
+            </div>
+            <style>
+                .main-nav {
+                    margin-left: 100px;
+                }
+            </style>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content section -->
+    <main>
+        <!-- Hero section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Pure & Natural Jaggery Products</h2>
+                <p>Discover our range of organic jaggery products made with love and care</p>
+                <a href="#products" class="cta-button">Shop Now</a>
+            </div>
+        </section>
+
+        <!-- Products section -->
+        <section id="products" class="products">
+            <!-- Product cards -->
+            <div class="product">
+                <img src="images/product1.jpg" alt="Jaggery Product 1">
+                <h2>Organic Jaggery Block</h2>
+                <p>500g - Rs. 300</p>
+                <button onclick="addToCart({
+                    name: 'Organic Jaggery Block',
+                    price: 300,
+                    image: 'images/product1.jpg',
+                    quantity: 1
+                })">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/product2.png" alt="Jaggery Product 2">
+                <h2>Jaggery Powder</h2>
+                <p>1kg - Rs. 500</p>
+                <button onclick="addToCart({
+                    name: 'Jaggery Powder',
+                    price: 500,
+                    image: 'images/product2.png',
+                    quantity: 1
+                })">Add to Cart</button>
+            </div>
+            
+            <div class="product">
+                <img src="images/product3.jpg" alt="Jaggery Product 3">
+                <h2>Flavored Jaggery candy</h2>
+                <p>250g - Rs. 199</p>
+                <button onclick="addToCart({
+                    name: 'Flavored Jaggery candy',
+                    price: 199,
+                    image: 'images/product3.jpg',
+                    quantity: 1
+                })">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/product4.png" alt="Jaggery Product 4">
+                <h2>Flavored Jaggery</h2>
+                <p>250g - Rs. 199</p>
+                <button onclick="addToCart({
+                    name: 'Flavored Jaggery',
+                    price: 199,
+                    image: 'images/product4.png',
+                    quantity: 1
+                })">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/product5.png" alt="Jaggery Product 5">
+                <h2>Flavored Jaggery</h2>
+                <p>250g - Rs. 199</p>
+                <button onclick="addToCart({
+                    name: 'Flavored Jaggery',
+                    price: 199,
+                    image: 'images/product5.png',
+                    quantity: 1
+                })">Add to Cart</button>
+            </div>
+                <div class="product">
+                    <img src="images/product6.png" alt="Jaggery Product 6">
+                    <h2>Flavored Jaggery syrup</h2>
+                    <p>250ml - Rs. 100</p>
+                    <button onclick="addToCart({
+                        name: 'Flavored Jaggery syrup',
+                        price: 100,
+                        image: 'images/product6.png',
+                        quantity: 1
+                    })">Add to Cart</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <div class="footer-content">
+            <!-- About section -->
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Gudd Ji is your trusted source for pure and organic jaggery products.</p>
+            </div>
+            
+            <!-- Quick links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <!-- Customer service links -->
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <!-- Social media links -->
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright notice -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 Gudd Ji. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
